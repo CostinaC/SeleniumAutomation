@@ -10,13 +10,13 @@ import org.openqa.selenium.WebElement;
 import static org.junit.Assert.fail;
 
 public class EbayHome_steps {
-    WebDriver driver = new Environment().getDriver();  //s-a declarat o variabila numita driver care stocheaza driverul returnat de metoda getDriver
-    public EbayHome_steps(){}                      //acesta este un constructor care trebuie sa fie gol din cauza dependintei de Serenity
+    WebDriver driver = new Environment().getDriver();  //a variable called driver has been declared that stores the driver returned by the getDriver method
+    public EbayHome_steps(){}                      //this is a builder that must be empty due to the dependence on Serenity
     @Given("I am on ebay home page")
     public void i_am_on_ebay_home_page() throws InterruptedException {
        driver.get("https://www.ebay.com/");
        Thread.sleep(5000);
-       driver.manage().window().maximize();             //maximizare fereastra pt a putea vedea "Advanced"
+       driver.manage().window().maximize();             //maximize the window to see the "Advanced" field
        Thread.sleep(2000);
     }
     @When("I click on the advanced search link")
@@ -27,7 +27,7 @@ public class EbayHome_steps {
     @Then("I navigate to advaced search page")
     public void i_navigate_to_advaced_search_page() {
         String expURL = "https://www.ebay.com/sch/ebayadvsearch";
-        String actURL = driver.getCurrentUrl();         //getCurrentURL extrage url paginii care este deschisa
+        String actURL = driver.getCurrentUrl();         //getCurrentURL extract the url of the page that is open
         if (!expURL.equals(actURL)) {
             fail("link does not navigate to the expected page");}
         else {
@@ -35,12 +35,12 @@ public class EbayHome_steps {
         }
     }
     /*
-    Componentele unei decizii:
-    1. inceputul deciziei(if)
-    2. decizia conditionala care se evalueaza: ce se afla in interiorul parantezelor            T/F
-    3.then - ramura din dreapta care se executa  in cazul in care conditia este adevarata reprezentata de deschiderea acoladei, set de instructiuni, si inchiderea }
-    4. else (ramura din stanga care se executa cand conditia este falsa) - reprezentata de keywordul else urmat de {, set de instructiuni, }
-    5. sfarsitul deciziei - care este reprezentat de inchiderea } la else sau then in cazul in care nu avem else
+The components of a decision:
+    1. the beginning of the decision(if)
+    2. the conditional decision to be evaluated: what is inside the parentheses           T/F
+    3.then - the branch on the right that is executed if the condition is true represented by the opening of the brace, set of instructions, and closing}
+    4. else (the left branch that runs when the condition is false) - represented by the keyword else followed by {, set of instructions,}
+    5. the end of the decision - which is represented by closing} at else or then if we don't have else
      */
 
 }

@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class SearchStreet_steps {
-    WebDriver driver = new Environment().getDriver();  //s-a declarat o variabila numita driver care stocheaza driverul returnat de metoda getDriver
+    WebDriver driver = new Environment().getDriver();
     public SearchStreet_steps(){}
     @Given("I open the site")
     public void open_street_map(){

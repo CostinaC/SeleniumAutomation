@@ -9,7 +9,8 @@ import java.sql.Driver;
 
 public class ShoppingCart {
 
-    //Cautati un produs pe site-ul http://automationpractice.com/index.php si adaugati-l in shopping cart
+
+    // Search for a product at http://automationpractice.com/index.php and add it to your shopping cart
     public static void tema1() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "C:/Users/Costina/Desktop/Drivers/chromedriver_win32 (2)/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
@@ -28,7 +29,7 @@ public class ShoppingCart {
     }
 
     public static void tema2() throws InterruptedException {
-        // Dati click pe butonul de youtube din partea dreapta jos pe site-ul http://automationpractice.com/index.php
+        // Click on the youtube button at the bottom right of http://automationpractice.com/index.php
         System.setProperty("webdriver.chrome.driver", "C:/Users/Costina/Desktop/Drivers/chromedriver_win32 (2)/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://automationpractice.com/index.php");
@@ -36,13 +37,13 @@ public class ShoppingCart {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", youtube);
         Thread.sleep(2000);
         //Actions actions = new Actions(driver);
-        //actions.moveToElement(youtube); //am instruit browserul sa faca scroll pana cand ajunge in dreptul elementului name
+        //actions.moveToElement(youtube);// I instructed the browser to scroll until it reaches the name element
         //actions.perform();
         youtube.click();
     }
 
     public static void tema3() throws InterruptedException {
-        //Intrati in meniul dresses si dati click pe sub-meniul Casual Dresses
+// Enter the dresses menu and click on the Casual Dresses sub-menu
         System.setProperty("webdriver.chrome.driver", "C:/Users/Costina/Desktop/Drivers/chromedriver_win32 (2)/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get("http://automationpractice.com/index.php");
